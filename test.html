@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css 布局</title>
+    <link rel="stylesheet" href="./test.css" />
+  </head>
+  <body>
+    一、两列布局
+    <hr />
+    1.1 左列定宽，右边自适应
+    <p></p>
+    <div class="box1">
+      <div class="left">left</div>
+      <div class="right">right</div>
+    </div>
+    <p>
+      1⃣️ float+margin 左边定宽部分使用浮动，右边设置margin实现自适应, marign
+      值等于 left 的宽度
+    </p>
+    <p>2⃣️ float+overflow 左边浮动后，右边直接 overflow-hidden</p>
+    <p>
+      3⃣️ 使用 display flex 父级添加 display:flex 左边不浮动，设置固定宽度，右边
+      flex: 1
+    </p>
+
+    <hr />
+    1.2
+    左侧自适应，右侧定宽，优先渲染左侧。HTML渲染顺序是从上往下渲染的，所以left的dom要写在上面
+    <p></p>
+    <div class="box2">
+      <div class="left">left</div>
+      <div class="right">right</div>
+    </div>
+    <p>
+      1⃣️ 一个左浮动一个右浮动 left 加负值 margin-left 空出足够空位达到让 right
+      上浮目的 parent 加正的 padding-left 或者 margin-left 把 left “挤回来”
+    </p>
+    <p>2⃣️ 使用 flex</p>
+    <hr />
+    1.3 一列根据内容撑开，一列自适应
+    <p></p>
+    <div class="box">
+      <div class="left3 l">左侧根据内容自动撑开</div>
+      <div class="right3 r">右侧自适应了</div>
+    </div>
+    <p>1⃣️ 左侧浮动，不给宽度，右侧overflow</p>
+    <p>2⃣️ flex</p>
+    <hr />
+    <p>总结：基本都是用 float + overflow 或者是 flex 来解决</p>
+    <hr />
+    二、三列布局
+    <hr />
+    2.1 两列定宽，一列自适应
+    <p></p>
+    <div class="box4">
+      <div class="left4 l">left</div>
+      <div class="center4 c">center</div>
+      <div class="right4">right</div>
+    </div>
+    <p>1⃣️ flex</p>
+    <p>2⃣️ 定宽的float 自适应的 overflow</p>
+    <hr>
+    2.2 两侧定宽，中间自适应
+    <p></p>
+    <p>1⃣️ 双飞翼布局，全部float， 左边的 margin 负的整个 parent 的宽度，右边负整个自身的宽度，中间再加一个字元素，通过margin留出左右两侧的空间</p>
+    <div class="box5">
+      <div class="center5 c">
+        <div class="center5-c">center</div>
+      </div>
+      <div class="left5 l">left</div>
+      <div class="right5 r">right</div>
+    </div>
+    <hr>
+    <p>2⃣️ 圣杯布局，全部float，parent 直接左右留空，中间center沾满宽度，左右两侧通过margin负值和相对定位把自己挤到目标位置</p>
+    <div class="box6">
+      <div class="center6 c">center</div>
+      <div class="left6 l">left</div>
+      <div class="right6 r">right</div>
+    </div>
+    <p>3⃣️ flex</p>
+    <div class="box7">
+      <div class="center7 c">center</div>
+      <div class="left7 l">left</div>
+      <div class="right7 r">right</div> 
+    </div>
+  </body>
+</html>

@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+hr {
+  margin: 20px 0;
+}
+p {
+  margin: 10px;
+}
+
+div{
+  height: 300px;
+}
+.l {
+  background: #fc9;
+  width: 100px;
+}
+.r {
+  background: #99cccc;
+  width: 100px;
+}
+.c {
+  background: #ffcccc;
+}
+.box {
+  display: flex;
+}
+
+.box1 {
+ display: flex;
+}
+.box1 .left {
+  background: #fc9;
+  width: 100px;
+  height: 300px;
+  /* float: left; */
+}
+.box1 .right {
+  background: #99cccc;
+  height: 300px;
+  /* margin-left: 100px; */
+  /* overflow: hidden; 利用 bfc 特性 */
+  flex: 1;
+}
+
+/* .left {
+  background-color: #ffcc99;
+  width: 100px;
+  height: 500px;
+  float: left;
+}
+
+
+.right {
+  background-color: #99cccc;
+  height: 500px;
+} */
+
+
+/* 1.2 左侧自适应，右侧定宽 */
+.box2 {
+  /* padding-left: 100px; */
+  display: flex;
+}
+.box2 .left {
+  /* float: left; */
+  background: #fc9;
+  width: 100%;
+  height: 300px;
+  /* margin-left: -100px; */
+  flex: 1;
+}
+.box2 .right {
+  float: right;
+  background: #99cccc;
+  width: 100px;
+  height: 300px;
+}
+
+/* 1.3 */
+.left3 {
+  float: left;
+}
+.right3 {
+  /* overflow: hidden; */
+  flex: 1;
+}
+
+/* 2.1 */
+.left4 , .center4{
+  width: 100px;
+  float: left;
+}
+.right4 {
+  /* flex: 1; */
+  overflow: hidden;
+  background: lightcyan;
+}
+
+
+/* 2.2 */
+.center5 {
+  float: left;
+  width: 100%;
+}
+.center5-c {
+  /* 给两边空出位置，大于左右实际宽度就可以产生间距 */
+  margin: 0 120px;
+  background: rgb(114, 204, 159);
+}
+
+.left5 {
+  float: left;
+  /* marigin 给整个 parent 的宽度，这样就可以移动到最左边 */
+  margin-left: -100%;
+  width: 100px;
+}
+.right5 {
+  float: left;
+  width: 100px;
+  /* margin 给整个 right 自身的宽度，可以移动到最右边 */
+  margin-left: -100px;
+}
+
+.box6 {
+  padding: 0 100px;
+  position: relative;
+}
+
+.left6 {
+  float: left;
+  margin-left: -100%;
+  position: relative;
+  left: -100px;
+}
+
+.center6 {
+  float: left;
+  width: 100%;
+}
+
+.right6 {
+  float: left;
+  position: relative;
+  left: 100px;
+  margin-left: -100px;
+}
+
+.box7 {
+  display: flex;
+}
+
+.center7 {
+  flex: 1;
+  order: 2;
+}
+.left7 {
+  order: 1;
+}
+.right7 {
+  order: 3;
+}
