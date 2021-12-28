@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css-doodle</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <css-doodle>
+      :doodle {
+        @grid: 1 / 100vw 100vh;
+        grid-gap: 1px;
+      }
+      background-color: #0a0c27;
+      background-image: @doodle(
+        @grid: 6 / 100%;
+        @size: 4px;
+        font-size: 4px;
+        color: hsl(@r240, 30%, 50%); /*css hsl(色相，饱和度，亮度) 函数, @r 是转换为颜色值，是 less 的函数*/
+        box-shadow: @m3x5(
+          calc(4em - @nx * 1em) calc(@ny * 1em)
+            @p(@m3(currentColor), @m2(transparent)),
+          calc(2em + @nx * 1em) calc(@ny * 1em)
+            @lp
+        );
+      );
+      <!-- @size: 50px 30px; -->
+      <!-- transform: scale(@rand(.2, .9));  -->
+      background-size: 200px 200px;
+      <!-- background: #60569e; -->
+    </css-doodle>
+
+    css-doodle 标签里设置 grid="5" 生成一个 5 x 5 的网格
+    :doodle  给自己设置样式
+    @grid 和 grid="5"一样，但是优先级更高
+    
+    @size Set width and height in one place. 设置整个 css-doodle 的大小
+    @size: 10em; /* width: 10em; height: 10em; */
+    @size: 4em 5em; /* width: 4em; height: 5em; */
+    @grid: 8 / 8em; Set grid and doodle size at the same time, 这样可以省去 @size 相当于 @grid/ @size，/ 后面设置size
+
+    @doodle Generate url() image with css-doodle code. 根据 css-doodle 代码生成图像
+
+    grid-gap 置网格行与列之间的间隙
+    <script src="https://unpkg.com/css-doodle@0.23.1/css-doodle.min.js"></script>
+  </body>
+</html>
