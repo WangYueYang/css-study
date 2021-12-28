@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css</title>
+    <style>
+      :root {
+        --fontColor: red;
+        --fontSize: 20px;
+      }
+
+      /* 通过 @supports 检查是否支持当前特性 一般放在代码顶层 */
+      @supports ((--fontSize: red)) {
+        .box {
+          /* 兼容性处理 */
+          color: green;
+          color: var(--fontColor);
+          font-size: var(--fontSize);
+        }
+      }
+
+      @supports (not (--fontSize: 20px)) {
+        .box {
+          font-size: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <p>啊圣诞节福利看见阿斯科利</p>
+    </div>
+  </body>
+  <script>
+    const box = document.querySelector('.box');
+    box.style.setProperty('--fontSize', '24px');
+    box.style.setProperty('--fontColor', 'green');
+    // 这里需要前面通过 element.style.setProperty() 设置了 css 变量后才能获取的到
+    const color = box.style.getPropertyValue('--fontSize');
+    console.log(color, 'color');
+    // 删除变量 同样需要前面设置过后
+    box.style.removeProperty('--fontColor');
+  </script>
+</html>
