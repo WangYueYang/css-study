@@ -62,10 +62,13 @@
     </div>
     <p>1⃣️ flex</p>
     <p>2⃣️ 定宽的float 自适应的 overflow</p>
-    <hr>
+    <hr />
     2.2 两侧定宽，中间自适应
     <p></p>
-    <p>1⃣️ 双飞翼布局，全部float， 左边的 margin 负的整个 parent 的宽度，右边负整个自身的宽度，中间再加一个字元素，通过margin留出左右两侧的空间</p>
+    <p>
+      1⃣️ 双飞翼布局，全部float， 左边的 margin 负的整个 parent
+      的宽度，右边负整个自身的宽度，中间再加一个字元素，通过margin留出左右两侧的空间
+    </p>
     <div class="box5">
       <div class="center5 c">
         <div class="center5-c">center</div>
@@ -73,8 +76,11 @@
       <div class="left5 l">left</div>
       <div class="right5 r">right</div>
     </div>
-    <hr>
-    <p>2⃣️ 圣杯布局，全部float，parent 直接左右留空，中间center沾满宽度，左右两侧通过margin负值和相对定位把自己挤到目标位置</p>
+    <hr />
+    <p>
+      2⃣️ 圣杯布局，全部float，parent
+      直接左右留空，中间center沾满宽度，左右两侧通过margin负值和相对定位把自己挤到目标位置
+    </p>
     <div class="box6">
       <div class="center6 c">center</div>
       <div class="left6 l">left</div>
@@ -84,7 +90,47 @@
     <div class="box7">
       <div class="center7 c">center</div>
       <div class="left7 l">left</div>
-      <div class="right7 r">right</div> 
+      <div class="right7 r">right</div>
+    </div>
+    <hr />
+    三、多列布局
+    <hr />
+    <p>3.1 多列等宽</p>
+    <div class="box column-wrapper">
+      <div class="l">一</div>
+      <div class="c">二</div>
+      <div class="r">三</div>
+      <div>四</div>
+    </div>
+    <p>
+      1⃣️ 使用float，宽度25%，添加box-sizing改变盒模型，子元素给一个padding-left
+      父级给一个负的margin-left，抵消最左边的padding-left,子元素设置 background-clip:center-box 设置元素的背景（背景图片或颜色）是否延伸到边框、内边距盒子、内容盒子下面。 
+    </p>
+    <p>2⃣️ 使用flex， 子元素宽度25%，flex：1 margin-left 10px 父元素给一个负的margin-left 10px 抵消最左边的margin</p>
+    <hr>
+    <p>3.1 九宫格布局</p>
+    <div class="box nine">
+      <div class="l">1</div>
+      <div class="l">2</div>
+      <div class="l">3</div>
+      <div class="l">4</div>
+      <div class="l">5</div>
+      <div class="l">6</div>
+      <div class="l">7</div>
+      <div class="l">8</div>
+      <div class="l">9</div>
+    </div>
+    <p>1⃣️ 和多列等宽一样，只不过字元素加了一个padding-top 父元素相对应的要给一个负的 margin-top</p>
+    <p>2⃣️ flex, 父元素 flex-wrap: wrap 允许换行，字元素设置宽度</p>
+    <hr>
+    <p>四、全屏布局</p>
+    <div class="wrapper">
+      <div class="top">top</div>
+      <div class="center">
+        <div class="right">right</div>
+        <div class="left">left</div>
+      </div>
+      <div class="bottom">bottom</div>
     </div>
   </body>
 </html>

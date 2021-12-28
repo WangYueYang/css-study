@@ -162,3 +162,64 @@ div{
 .right7 {
   order: 3;
 }
+
+/* 3.1 */
+.column-wrapper {
+  margin-left: -10px;
+}
+.column-wrapper div {
+  width: 25%;
+  flex: 1;
+  margin-left: 10px;
+}
+
+/* 3.2 */
+/* .nine {
+  margin-left: -10px;
+  margin-top: -10px;
+}
+.nine div {
+  float: left;
+  width: 33%;
+  padding-left: 10px;
+  padding-top: 10px;
+  box-sizing: border-box;
+  background-clip: content-box;
+} */
+.nine {
+  margin: 0 auto;
+  height: auto;
+  flex-wrap: wrap;
+}
+.nine div {
+  width: calc(100% / 3);
+  box-sizing: border-box;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  background-clip: content-box;
+}
+
+/* 4 */
+.wrapper {
+  flex-direction: column;
+  height: auto;
+  display: flex;
+}
+.wrapper .top, .wrapper .bottom {
+  height: 50px;
+}
+.wrapper div {
+  border: 1px solid #333;
+}
+.wrapper .center {
+  display: flex;
+  flex: 1;
+}
+.wrapper .center .left {
+  width: 100px;
+  order: 1;
+}
+.wrapper .center .right {
+  order: 2;
+  flex: 1;
+}
